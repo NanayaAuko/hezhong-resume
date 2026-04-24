@@ -4,10 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>陳和仲 (HeZhong Chen) | 軟體設計工程師</title>
-    <!-- 引入 Tailwind CSS (CDN 方式) -->
+    <!-- 引入 Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- 引入 FontAwesome 圖示庫 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- 引入我們設定好的 modal 樣式 -->
+    <link rel="stylesheet" href="style.css">
+    
     <!-- 設定 Tailwind 自訂色彩 -->
     <script>
         tailwind.config = {
@@ -47,6 +51,7 @@
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16">
                 <div class="flex items-center">
+                    <!-- 你自訂的標題 -->
                     <span class="font-bold text-xl text-primary">我的履歷小空間</span>
                 </div>
                 <div class="hidden md:flex items-center space-x-8">
@@ -85,10 +90,9 @@
                     </a>
                 </div>
             </div>
-            <!-- 照片區塊 -->
+            <!-- 照片區塊：使用你上傳的熊本熊合照 -->
             <div class="md:w-1/3 mt-10 md:mt-0 flex justify-center">
                 <div class="w-48 h-48 md:w-64 md:h-64 rounded-full bg-white/10 flex items-center justify-center border-4 border-white/20 shadow-xl overflow-hidden relative">
-                    <!-- 請將 src 替換為你的照片檔案路徑 -->
                     <img src="79299.jpg" alt="陳和仲" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" class="w-full h-full object-cover">
                     <!-- 當照片載入失敗時顯示的預設圖示 -->
                     <div style="display: none;" class="absolute inset-0 flex flex-col items-center justify-center text-gray-400">
@@ -167,7 +171,11 @@
     <section id="experience" class="py-20 bg-white">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl font-bold text-dark mb-10 border-l-4 border-secondary pl-4">工作經歷</h2>
+            
+            <!-- 經歷時間軸 -->
             <div class="relative border-l-2 border-gray-200 ml-3 md:ml-0 md:pl-6 space-y-12">
+                
+                <!-- 經歷 1: 清展科技 -->
                 <div class="relative pl-8 md:pl-0">
                     <div class="timeline-dot md:-left-[31px]"></div>
                     <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 hover:border-blue-200 transition">
@@ -175,13 +183,30 @@
                             <h3 class="text-xl font-bold text-primary">程式設計師 <span class="text-gray-500 font-normal text-lg">@ HISS 清展科技</span></h3>
                             <span class="text-sm font-semibold text-secondary bg-blue-50 px-3 py-1 rounded-full w-max mt-2 md:mt-0">2024/03 ~ 仍在職</span>
                         </div>
-                        <ul class="list-disc pl-5 space-y-2 text-gray-700">
-                            <li><strong class="text-dark">流程自動化：</strong>開發 SAP B1 DTW 排程工具，將跨部門匯入流程自動化，大幅縮減人工處理時間。</li>
-                            <li><strong class="text-dark">系統翻新：</strong>主導 MVC 網頁架構重構，提升企業內部系統的維護性與效能。</li>
-                            <li><strong class="text-dark">維運智能化：</strong>建置主動式監控預警系統，結合 Python 腳本即時掌握伺服器健康狀態。</li>
+                        <ul class="list-disc pl-5 space-y-2 text-gray-700 mt-4">
+                            <li><strong class="text-dark">BPM 表單現代化：</strong>負責 BPM (EasyFlow) 電子表單（如 IT01、EC01 等）深度開發，推動架構轉型，逐步從 Web Forms 遷移至 .NET 10 Blazor。</li>
+                            <li><strong class="text-dark">ERP 自動化整合：</strong>獨立開發 SAP B1 DTW 自動排程程式，取代跨部門人工手動匯入，實現資料拋轉零錯誤率並大幅節省作業時間。</li>
+                            <li><strong class="text-dark">AI 導入與智慧維運：</strong>成功將 LM Studio (在地化 LLM) 整合至既有 ASP.NET 架構中；並結合 Python 建置伺服器監控預警系統，化被動為主動預防停機風險。</li>
                         </ul>
                     </div>
                 </div>
+
+                <!-- 經歷 2: 衛武營 -->
+                <div class="relative pl-8 md:pl-0">
+                    <div class="timeline-dot md:-left-[31px]"></div>
+                    <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 hover:border-blue-200 transition">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between mb-2">
+                            <h3 class="text-xl font-bold text-primary">資訊專員 <span class="text-gray-500 font-normal text-lg">@ 衛武營國家藝術文化中心</span></h3>
+                            <span class="text-sm font-semibold text-gray-500 bg-gray-100 px-3 py-1 rounded-full w-max mt-2 md:mt-0">2023/09 ~ 2023/12</span>
+                        </div>
+                        <ul class="list-disc pl-5 space-y-2 text-gray-700 mt-4">
+                            <li><strong class="text-dark">ERP 系統核心維護：</strong>負責內部 ERP 系統核心功能維護，並撰寫內部 API 網頁確保跨系統數據交換之穩定性。</li>
+                            <li><strong class="text-dark">基礎設施營運支援：</strong>協助跨部門資訊需求處理，負責日常 IT 文書、軟硬體排除與網路基礎設施維護。</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 經歷 3: 屏東基督教醫院 -->
                 <div class="relative pl-8 md:pl-0">
                     <div class="timeline-dot md:-left-[31px]"></div>
                     <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 hover:border-blue-200 transition">
@@ -189,65 +214,102 @@
                             <h3 class="text-xl font-bold text-primary">軟體工程師 <span class="text-gray-500 font-normal text-lg">@ 屏東基督教醫院</span></h3>
                             <span class="text-sm font-semibold text-gray-500 bg-gray-100 px-3 py-1 rounded-full w-max mt-2 md:mt-0">2019/10 ~ 2023/09</span>
                         </div>
-                        <ul class="list-disc pl-5 space-y-2 text-gray-700">
-                            <li>核心 HIS 醫療系統功能開發，確保醫療業務 24 小時高穩定運行。</li>
-                            <li>獨立開發多項輔助網頁（如健檢中心、出院準備），顯著優化醫護作業流程。</li>
+                        <ul class="list-disc pl-5 space-y-2 text-gray-700 mt-4">
+                            <li><strong class="text-dark">核心 HIS 醫療系統：</strong>深度參與醫院 HIS 系統開發與維護，確保 24 小時高併發、高穩定性運行，支援門診與住院業務。</li>
+                            <li><strong class="text-dark">關鍵醫療網頁開發：</strong>獨立開發多項輔助 Web 模組，包含「健檢中心」、「出院服務準備」及「糖尿病個案管理」，大幅優化醫護行政效率。</li>
+                            <li><strong class="text-dark">數據驅動決策：</strong>客製化撰寫高效能 SQL 預存程序 (Stored Procedures) 進行海量資料撈取，優化效能並提供行政決策報表。</li>
                         </ul>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
 
-    <!-- 專案與作品集 (Projects) -->
+    <!-- 專案與作品集 (Projects) - Modal 互動視窗版 -->
     <section id="projects" class="py-20 bg-gray-50">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl font-bold text-dark mb-10 border-l-4 border-secondary pl-4">專案與作品集</h2>
-            <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-200 flex flex-col lg:flex-row">
-                <div class="p-8 lg:w-2/3">
-                    <div class="flex items-center gap-3 mb-4">
-                        <i class="fa-solid fa-microchip text-2xl text-secondary"></i>
-                        <h3 class="text-2xl font-bold text-primary">Intelligent Server Monitoring & AI Synthesis</h3>
-                    </div>
-                    <h4 class="text-lg text-gray-600 mb-6 font-medium">智慧伺服器監控與 AI 數據整理系統</h4>
-                    <p class="text-gray-700 mb-6 leading-relaxed">
-                        針對企業內部維運需求，開發一套自動化採集與 AI 分析工具。透過爬蟲技術解決監控數據雜亂、人工彙整不易的痛點。
-                    </p>
-                    <div class="space-y-4">
-                        <div class="flex items-start">
-                            <i class="fa-solid fa-check text-green-500 mt-1 mr-3"></i>
-                            <p class="text-gray-700">利用 <strong class="text-dark">Python</strong> 撰寫自動化排程爬蟲，擷取多台伺服器網頁數據與系統日誌。</p>
+            
+            <!-- 專案卡片列表 -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- 專案一：理財 AI 系統卡片 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-200 hover:shadow-lg transition group cursor-pointer" onclick="openModal('project-ai')">
+                    <div class="p-8">
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="w-12 h-12 bg-blue-100 text-secondary rounded-lg flex items-center justify-center text-2xl">
+                                <i class="fa-solid fa-chart-line"></i>
+                            </div>
+                            <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2 py-1 rounded">查看詳情</span>
                         </div>
-                        <div class="flex items-start">
-                            <i class="fa-solid fa-check text-green-500 mt-1 mr-3"></i>
-                            <p class="text-gray-700">整合 <strong class="text-dark">LM Studio API (在地化 LLM)</strong>，對非結構化的狀態數據進行自動化彙整與關鍵異常提取。</p>
-                        </div>
-                        <div class="flex items-start">
-                            <i class="fa-solid fa-check text-green-500 mt-1 mr-3"></i>
-                            <p class="text-gray-700">設計類似 <strong class="text-dark">SAP DTW</strong> 的資料拋轉邏輯，將整理後的 AI 分析結果回填至 SQL Server 資料庫。</p>
-                        </div>
-                        <div class="flex items-start">
-                            <i class="fa-solid fa-check text-green-500 mt-1 mr-3"></i>
-                            <p class="text-gray-700">前端使用 <strong class="text-dark">Blazor</strong> 框架建置儀表板，提供即時的系統健康報告與維運建議。</p>
+                        <h3 class="text-xl font-bold text-primary mb-2 group-hover:text-secondary transition">個人理財與資產預測系統</h3>
+                        <p class="text-gray-600 text-sm line-clamp-2">結合爬蟲、SQL Server 與在地化 LLM (LM Studio) 的全端 Blazor 專案，自動化追蹤 ETF 股市資產。</p>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="text-[10px] px-2 py-1 bg-gray-100 rounded text-gray-500">C# Blazor</span>
+                            <span class="text-[10px] px-2 py-1 bg-gray-100 rounded text-gray-500">Python 爬蟲</span>
+                            <span class="text-[10px] px-2 py-1 bg-gray-100 rounded text-gray-500">LM Studio</span>
                         </div>
                     </div>
                 </div>
-                <div class="bg-gray-100 lg:w-1/3 p-8 flex flex-col justify-center border-t lg:border-t-0 lg:border-l border-gray-200">
-                    <h4 class="font-bold text-gray-700 mb-4 flex items-center"><i class="fa-solid fa-screwdriver-wrench mr-2"></i> 使用技術</h4>
-                    <div class="flex flex-wrap gap-2 mb-8">
-                        <span class="px-3 py-1 bg-white text-gray-700 rounded-md text-sm font-medium border border-gray-200">Python Scrapy</span>
-                        <span class="px-3 py-1 bg-white text-gray-700 rounded-md text-sm font-medium border border-gray-200">LM Studio API</span>
-                        <span class="px-3 py-1 bg-white text-gray-700 rounded-md text-sm font-medium border border-gray-200">C# Web API</span>
-                        <span class="px-3 py-1 bg-white text-gray-700 rounded-md text-sm font-medium border border-gray-200">Blazor</span>
-                        <span class="px-3 py-1 bg-white text-gray-700 rounded-md text-sm font-medium border border-gray-200">SQL Server</span>
-                    </div>
-                    <a href="https://github.com/NanayaAuko/hezhong-resume" target="_blank" class="inline-flex items-center justify-center px-6 py-3 text-white bg-primary hover:bg-blue-800 transition rounded-md shadow-sm">
-                        <i class="fa-brands fa-github mr-2"></i> 查看技術架構
-                    </a>
-                </div>
+                <!-- 未來可以新增更多卡片於此 -->
             </div>
         </div>
     </section>
+
+    <!-- 互動視窗容器 (Modal Box) -->
+    <div id="modal-overlay" class="modal-overlay hidden" onclick="closeModal()">
+        <div class="modal-container" onclick="event.stopPropagation()">
+            <!-- 關閉按鈕 -->
+            <button class="modal-close-btn" onclick="closeModal()">
+                <i class="fa-solid fa-xmark text-2xl"></i>
+            </button>
+
+            <!-- 視窗詳細內容區 -->
+            <div id="modal-content-project-ai" class="modal-content hidden">
+                <div class="flex items-center gap-4 mb-6">
+                    <i class="fa-solid fa-chart-line text-3xl text-secondary"></i>
+                    <div>
+                        <h3 class="text-2xl font-bold text-primary">Personal Wealth & Financial AI System</h3>
+                        <p class="text-gray-500 italic">個人理財與資產預測系統</p>
+                    </div>
+                </div>
+                
+                <div class="space-y-6 text-gray-700">
+                    <p class="leading-relaxed">
+                        結合網頁爬蟲、資料庫與 AI 運算技術，自主開發的個人化資產管理儀表板，具備現代化前後端分離架構。
+                    </p>
+                    
+                    <div class="bg-blue-50 p-6 rounded-xl border border-blue-100">
+                        <h4 class="font-bold text-primary mb-4 flex items-center"><i class="fa-solid fa-list-check mr-2"></i> 技術實作細節</h4>
+                        <ul class="space-y-4">
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check text-green-500 mt-1"></i>
+                                <span><strong>爬蟲自動化拋轉：</strong>利用 Python 與 C# 撰寫排程爬蟲，自動擷取台股 ETF (如 0056, 00878) 數據，並透過類似 SAP DTW 邏輯自動拋轉至 SQL Server。</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check text-green-500 mt-1"></i>
+                                <span><strong>高效能數據運算：</strong>撰寫 Stored Procedures 處理高複雜度的資產配比與歷史損益運算。</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check text-green-500 mt-1"></i>
+                                <span><strong>AI 輔助分析：</strong>以 .NET Core Web API 為核心後端，整合 LM Studio API 進行市場數據的 AI 輔助分析與重點摘要。</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check text-green-500 mt-1"></i>
+                                <span><strong>現代化前端：</strong>前端逐步導入 Blazor 框架，實現響應式與高互動性的數據視覺化儀表板。</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="flex gap-4 pt-4">
+                        <a href="https://github.com/NanayaAuko/hezhong-resume" target="_blank" class="flex-1 text-center py-3 bg-primary text-white rounded-lg font-bold hover:bg-blue-800 transition">
+                            <i class="fa-brands fa-github mr-2"></i> 查看程式碼
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- 頁尾 -->
     <footer class="bg-dark text-white py-10">
@@ -261,5 +323,42 @@
         </div>
     </footer>
 
+    <!-- 為了確保 Modal 能正常運作，將 JS 邏輯加在最底部 -->
+    <script>
+        // 開啟 Modal
+        function openModal(projectId) {
+            const overlay = document.getElementById('modal-overlay');
+            const content = document.getElementById(`modal-content-${projectId}`);
+            if (!overlay || !content) return;
+            
+            overlay.classList.remove('hidden');
+            content.classList.remove('hidden');
+            
+            setTimeout(() => {
+                overlay.classList.add('active');
+                document.body.classList.add('modal-open');
+            }, 10);
+        }
+
+        // 關閉 Modal
+        function closeModal() {
+            const overlay = document.getElementById('modal-overlay');
+            const contents = document.querySelectorAll('.modal-content');
+            if (!overlay) return;
+            
+            overlay.classList.remove('active');
+            document.body.classList.remove('modal-open');
+            
+            setTimeout(() => {
+                overlay.classList.add('hidden');
+                contents.forEach(c => c.classList.add('hidden'));
+            }, 300);
+        }
+
+        // 按下 ESC 鍵也能關閉視窗
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeModal();
+        });
+    </script>
 </body>
 </html>
