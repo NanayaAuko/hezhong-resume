@@ -9,9 +9,6 @@
     <!-- 引入 FontAwesome 圖示庫 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- 引入我們設定好的 modal 樣式 -->
-    <link rel="stylesheet" href="style.css">
-    
     <!-- 設定 Tailwind 自訂色彩 -->
     <script>
         tailwind.config = {
@@ -29,9 +26,13 @@
             }
         }
     </script>
+
+    <!-- ★ 將所有自訂樣式整合在此，避免外部檔案讀取失敗 ★ -->
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap');
         body { font-family: 'Noto Sans TC', sans-serif; }
+        
+        /* 時間軸圓點 */
         .timeline-dot {
             position: absolute;
             left: -6px;
@@ -42,6 +43,64 @@
             background-color: #3b82f6;
             border: 2px solid white;
         }
+
+        /* Modal 遮罩層 (預設隱藏) */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background-color: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(4px);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        /* Modal 顯示時的動畫狀態 */
+        .modal-overlay.active {
+            opacity: 1;
+        }
+
+        /* Modal 白底內容區塊 */
+        .modal-container {
+            background-color: white;
+            width: 100%;
+            max-width: 800px;
+            max-height: 90vh;
+            border-radius: 1.5rem;
+            position: relative;
+            padding: 2.5rem;
+            overflow-y: auto; /* 內容過長可滾動 */
+            transform: translateY(20px);
+            transition: transform 0.3s ease;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            cursor: default;
+        }
+
+        .modal-overlay.active .modal-container {
+            transform: translateY(0);
+        }
+
+        /* 鎖定背景滾動 */
+        body.modal-open {
+            overflow: hidden;
+        }
+
+        /* 自訂 Modal 滾動條，讓它更美觀 */
+        .modal-container::-webkit-scrollbar {
+            width: 8px;
+        }
+        .modal-container::-webkit-scrollbar-track {
+            background: #f1f5f9; 
+            border-radius: 8px;
+        }
+        .modal-container::-webkit-scrollbar-thumb {
+            background: #cbd5e1; 
+            border-radius: 8px;
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800 antialiased">
@@ -51,7 +110,6 @@
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16">
                 <div class="flex items-center">
-                    <!-- 你自訂的標題 -->
                     <span class="font-bold text-xl text-primary">我的履歷小空間</span>
                 </div>
                 <div class="hidden md:flex items-center space-x-8">
@@ -172,9 +230,7 @@
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl font-bold text-dark mb-10 border-l-4 border-secondary pl-4">工作經歷</h2>
             
-            <!-- 經歷時間軸 -->
             <div class="relative border-l-2 border-gray-200 ml-3 md:ml-0 md:pl-6 space-y-12">
-                
                 <!-- 經歷 1: 清展科技 -->
                 <div class="relative pl-8 md:pl-0">
                     <div class="timeline-dot md:-left-[31px]"></div>
@@ -221,7 +277,6 @@
                         </ul>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
@@ -234,13 +289,14 @@
             <!-- 專案卡片列表 -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <!-- 專案一：理財 AI 系統卡片 -->
+                <!-- 點擊這個卡片就會觸發 openModal 函式 -->
                 <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-200 hover:shadow-lg transition group cursor-pointer" onclick="openModal('project-ai')">
                     <div class="p-8">
                         <div class="flex justify-between items-start mb-4">
                             <div class="w-12 h-12 bg-blue-100 text-secondary rounded-lg flex items-center justify-center text-2xl">
                                 <i class="fa-solid fa-chart-line"></i>
                             </div>
-                            <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2 py-1 rounded">查看詳情</span>
+                            <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2 py-1 rounded hover:bg-blue-100 transition">查看詳情</span>
                         </div>
                         <h3 class="text-xl font-bold text-primary mb-2 group-hover:text-secondary transition">個人理財與資產預測系統</h3>
                         <p class="text-gray-600 text-sm line-clamp-2">結合爬蟲、SQL Server 與在地化 LLM (LM Studio) 的全端 Blazor 專案，自動化追蹤 ETF 股市資產。</p>
@@ -251,22 +307,22 @@
                         </div>
                     </div>
                 </div>
-                <!-- 未來可以新增更多卡片於此 -->
             </div>
         </div>
     </section>
 
-    <!-- 互動視窗容器 (Modal Box) -->
-    <div id="modal-overlay" class="modal-overlay hidden" onclick="closeModal()">
+    <!-- ★ 互動視窗容器 (Modal Box) ★ -->
+    <!-- 預設 display: none 隱藏，避免直接在畫面上攤開 -->
+    <div id="modal-overlay" class="modal-overlay" style="display: none;" onclick="closeModal()">
         <div class="modal-container" onclick="event.stopPropagation()">
             <!-- 關閉按鈕 -->
-            <button class="modal-close-btn" onclick="closeModal()">
-                <i class="fa-solid fa-xmark text-2xl"></i>
+            <button class="absolute top-6 right-6 text-gray-400 hover:text-gray-800 transition" onclick="closeModal()">
+                <i class="fa-solid fa-xmark text-3xl"></i>
             </button>
 
-            <!-- 視窗詳細內容區 -->
-            <div id="modal-content-project-ai" class="modal-content hidden">
-                <div class="flex items-center gap-4 mb-6">
+            <!-- 視窗詳細內容區 (只有在卡片點擊時顯示) -->
+            <div id="modal-content-project-ai" class="hidden">
+                <div class="flex items-center gap-4 mb-6 pr-8">
                     <i class="fa-solid fa-chart-line text-3xl text-secondary"></i>
                     <div>
                         <h3 class="text-2xl font-bold text-primary">Personal Wealth & Financial AI System</h3>
@@ -275,12 +331,12 @@
                 </div>
                 
                 <div class="space-y-6 text-gray-700">
-                    <p class="leading-relaxed">
+                    <p class="leading-relaxed text-lg">
                         結合網頁爬蟲、資料庫與 AI 運算技術，自主開發的個人化資產管理儀表板，具備現代化前後端分離架構。
                     </p>
                     
                     <div class="bg-blue-50 p-6 rounded-xl border border-blue-100">
-                        <h4 class="font-bold text-primary mb-4 flex items-center"><i class="fa-solid fa-list-check mr-2"></i> 技術實作細節</h4>
+                        <h4 class="font-bold text-primary mb-4 flex items-center text-lg"><i class="fa-solid fa-list-check mr-2"></i> 技術實作細節</h4>
                         <ul class="space-y-4">
                             <li class="flex items-start gap-3">
                                 <i class="fa-solid fa-circle-check text-green-500 mt-1"></i>
@@ -302,7 +358,7 @@
                     </div>
 
                     <div class="flex gap-4 pt-4">
-                        <a href="https://github.com/NanayaAuko/hezhong-resume" target="_blank" class="flex-1 text-center py-3 bg-primary text-white rounded-lg font-bold hover:bg-blue-800 transition">
+                        <a href="https://github.com/NanayaAuko/hezhong-resume" target="_blank" class="w-full text-center py-3 bg-primary text-white rounded-lg font-bold hover:bg-blue-800 transition shadow-md">
                             <i class="fa-brands fa-github mr-2"></i> 查看程式碼
                         </a>
                     </div>
@@ -323,39 +379,40 @@
         </div>
     </footer>
 
-    <!-- 為了確保 Modal 能正常運作，將 JS 邏輯加在最底部 -->
+    <!-- ★ 互動視窗控制腳本也直接整合進來 ★ -->
     <script>
-        // 開啟 Modal
         function openModal(projectId) {
             const overlay = document.getElementById('modal-overlay');
             const content = document.getElementById(`modal-content-${projectId}`);
             if (!overlay || !content) return;
             
-            overlay.classList.remove('hidden');
+            // 先隱藏所有視窗內容，再顯示被點擊的目標內容
+            document.querySelectorAll('[id^="modal-content-"]').forEach(el => el.classList.add('hidden'));
             content.classList.remove('hidden');
             
+            // 將 display 設為 flex 使其出現，然後加入動畫類別
+            overlay.style.display = 'flex';
             setTimeout(() => {
                 overlay.classList.add('active');
                 document.body.classList.add('modal-open');
             }, 10);
         }
 
-        // 關閉 Modal
         function closeModal() {
             const overlay = document.getElementById('modal-overlay');
-            const contents = document.querySelectorAll('.modal-content');
             if (!overlay) return;
             
+            // 移除動畫類別，開始淡出
             overlay.classList.remove('active');
             document.body.classList.remove('modal-open');
             
+            // 等待淡出動畫 (約 300ms) 結束後，再徹底隱藏
             setTimeout(() => {
-                overlay.classList.add('hidden');
-                contents.forEach(c => c.classList.add('hidden'));
+                overlay.style.display = 'none';
             }, 300);
         }
 
-        // 按下 ESC 鍵也能關閉視窗
+        // 支援按 ESC 鍵關閉視窗
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') closeModal();
         });
