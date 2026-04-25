@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>陳和仲 (HeZhong Chen) | 軟體設計工程師</title>
     <!-- 引入 Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="[https://cdn.tailwindcss.com](https://cdn.tailwindcss.com)"></script>
     <!-- 引入 FontAwesome 圖示庫 -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="[https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css)">
     
     <!-- 設定 Tailwind 自訂色彩 -->
     <script>
@@ -28,7 +28,7 @@
     </script>
 
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap');
+        @import url('[https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap](https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap)');
         body { font-family: 'Noto Sans TC', sans-serif; }
         
         .timeline-dot {
@@ -144,7 +144,7 @@
                     <div class="flex items-center bg-white/10 px-4 py-2 rounded-full">
                         <i class="fa-solid fa-location-dot mr-2"></i> 屏東縣九如鄉
                     </div>
-                    <a href="https://github.com/NanayaAuko/hezhong-resume" target="_blank" class="flex items-center bg-white/10 hover:bg-white/20 px-4 py-2 rounded-full transition">
+                    <a href="[https://github.com/NanayaAuko/hezhong-resume](https://github.com/NanayaAuko/hezhong-resume)" target="_blank" class="flex items-center bg-white/10 hover:bg-white/20 px-4 py-2 rounded-full transition">
                         <i class="fa-brands fa-github mr-2"></i> GitHub
                     </a>
                 </div>
@@ -241,7 +241,7 @@
                         <ul class="list-disc pl-5 space-y-2 text-gray-700">
                             <li><strong class="text-dark">BPM 表單現代化：</strong>負責 BPM 電子表單深度開發（如 IT01、EC01、WC03 等）。推動架構轉型，逐步從 Web Forms 遷移至 Web API 前後端分離架構。</li>
                             <li><strong class="text-dark">ERP 自動化整合：</strong>獨立開發 SAP B1 DTW 自動排程程式，取代手動匯入作業，實現拋轉零錯誤率並顯著提升工作效率。</li>
-                            <li><strong class="text-dark">AI 落地與維運：</strong>成功將 LM Studio 與 AnythingLLM API 整合至現有 ASP.NET 系統中；並結合 Python 建置主動式監控預警系統，確保伺服器穩定。</li>
+                            <li><strong class="text-dark">AI 落地與維運：</strong>成功將 LM Studio 與 AnythingLLM API 整合至現有 ASP.NET 系統中；並結合 Python 建置主動式監控預警系統。</li>
                         </ul>
                     </div>
                 </div>
@@ -270,9 +270,8 @@
                             <span class="text-sm font-semibold text-gray-500 bg-gray-100 px-3 py-1 rounded-full w-max mt-2 md:mt-0">2019/10 ~ 2023/09</span>
                         </div>
                         <ul class="list-disc pl-5 space-y-2 text-gray-700">
-                            <li><strong class="text-dark">醫療 Web 開發與維護：</strong>完成「健檢中心」、「出院準備服務」及「糖尿病個案管理」等多項 Web-based HIS 功能開發與維護。</li>
+                            <li><strong class="text-dark">醫療 Web 開發與維護：</strong>完成「健檢中心」、「出院準備服務」及「糖尿病個案管理」等多項 Web-based HIS 功能開發。</li>
                             <li><strong class="text-dark">核心 HIS 維護：</strong>參與核心醫療資訊系統開發，確保 24 小時高可用性運行，支撐醫院龐大門診業務。</li>
-                            <li><strong class="text-dark">數據報表：</strong>協助行政單位產出商業報表，累積 SQL 語法與資料庫處理經驗。</li>
                         </ul>
                     </div>
                 </div>
@@ -287,91 +286,109 @@
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- 專案 1: 理財 AI -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-200 hover:shadow-lg transition group cursor-pointer" onclick="openModal('project-ai')">
-                    <div class="p-8">
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-200 hover:shadow-lg transition group cursor-pointer flex flex-col" onclick="openModal('project-ai')">
+                    <div class="p-8 flex-grow">
                         <div class="flex justify-between items-start mb-4">
                             <div class="w-12 h-12 bg-blue-100 text-secondary rounded-lg flex items-center justify-center text-2xl"><i class="fa-solid fa-chart-line"></i></div>
-                            <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2 py-1 rounded hover:bg-blue-100 transition">查看詳情</span>
+                            <a href="[https://github.com/NanayaAuko/Financial-Situation.git](https://github.com/NanayaAuko/Financial-Situation.git)" target="_blank" onclick="event.stopPropagation()" class="text-gray-400 hover:text-primary transition text-xl"><i class="fa-brands fa-github"></i></a>
                         </div>
                         <h3 class="text-xl font-bold text-primary mb-2 group-hover:text-secondary transition">個人理財與資產預測系統</h3>
-                        <p class="text-gray-600 text-sm line-clamp-2">結合爬蟲、SQL Server 與在地化 LLM (LM Studio) 的全端 Blazor 專案。</p>
-                        <div class="mt-4 flex flex-wrap gap-2">
-                            <span class="text-[10px] px-2 py-1 bg-gray-100 rounded text-gray-500">C# Blazor</span>
-                            <span class="text-[10px] px-2 py-1 bg-gray-100 rounded text-gray-500">Python</span>
-                            <span class="text-[10px] px-2 py-1 bg-gray-100 rounded text-gray-500">LM Studio</span>
+                        <p class="text-gray-600 text-sm mb-4 leading-relaxed">結合 Python 爬蟲自動擷取 ETF 數據，並利用 .NET 10 API 整合在地化 AI (LM Studio) 進行財務趨勢分析。</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-[10px] px-2 py-1 bg-gray-100 rounded text-gray-500 font-bold uppercase">.NET 10</span>
+                            <span class="text-[10px] px-2 py-1 bg-gray-100 rounded text-gray-500 font-bold uppercase">Python</span>
+                            <span class="text-[10px] px-2 py-1 bg-gray-100 rounded text-gray-500 font-bold uppercase">AI</span>
                         </div>
+                    </div>
+                    <div class="px-8 py-4 bg-gray-50 border-t border-gray-100 text-xs font-bold text-secondary flex justify-between items-center">
+                        <span>查看技術細節</span>
+                        <i class="fa-solid fa-arrow-right"></i>
                     </div>
                 </div>
 
                 <!-- 專案 2: BPM 前後端分離 -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-200 hover:shadow-lg transition group cursor-pointer" onclick="openModal('project-bpm')">
-                    <div class="p-8">
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-200 hover:shadow-lg transition group cursor-pointer flex flex-col" onclick="openModal('project-bpm')">
+                    <div class="p-8 flex-grow">
                         <div class="flex justify-between items-start mb-4">
                             <div class="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-lg flex items-center justify-center text-2xl"><i class="fa-solid fa-sitemap"></i></div>
-                            <span class="text-xs font-bold text-indigo-600 bg-indigo-50 px-2 py-1 rounded hover:bg-indigo-100 transition">查看詳情</span>
                         </div>
                         <h3 class="text-xl font-bold text-primary mb-2 group-hover:text-secondary transition">企業 BPM 與前後端分離架構</h3>
-                        <p class="text-gray-600 text-sm line-clamp-2">主導內部流程系統現代化，透過 Web API 降低技術債與開發成本。</p>
-                        <div class="mt-4 flex flex-wrap gap-2">
-                            <span class="text-[10px] px-2 py-1 bg-gray-100 rounded text-gray-500">C# Web API</span>
-                            <span class="text-[10px] px-2 py-1 bg-gray-100 rounded text-gray-500">BPM 整合</span>
+                        <p class="text-gray-600 text-sm mb-4 leading-relaxed">主導 EasyFlow 電子表單系統從 Web Forms 轉型至 Web API 架構。透過數據解耦，提升開發彈性與可維護性。</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-[10px] px-2 py-1 bg-gray-100 rounded text-gray-500 font-bold uppercase">C# API</span>
+                            <span class="text-[10px] px-2 py-1 bg-gray-100 rounded text-gray-500 font-bold uppercase">BPM</span>
                         </div>
+                    </div>
+                    <div class="px-8 py-4 bg-gray-50 border-t border-gray-100 text-xs font-bold text-secondary flex justify-between items-center">
+                        <span>查看架構設計</span>
+                        <i class="fa-solid fa-arrow-right"></i>
                     </div>
                 </div>
 
                 <!-- 專案 3: ERP 自動化 -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-200 hover:shadow-lg transition group cursor-pointer" onclick="openModal('project-erp')">
-                    <div class="p-8">
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-200 hover:shadow-lg transition group cursor-pointer flex flex-col" onclick="openModal('project-erp')">
+                    <div class="p-8 flex-grow">
                         <div class="flex justify-between items-start mb-4">
                             <div class="w-12 h-12 bg-green-100 text-green-600 rounded-lg flex items-center justify-center text-2xl"><i class="fa-solid fa-network-wired"></i></div>
-                            <span class="text-xs font-bold text-green-600 bg-green-50 px-2 py-1 rounded hover:bg-green-100 transition">查看詳情</span>
                         </div>
                         <h3 class="text-xl font-bold text-primary mb-2 group-hover:text-secondary transition">ERP 自動化排程引擎</h3>
-                        <p class="text-gray-600 text-sm line-clamp-2">獨立開發 SAP B1 DTW 排程工具，解決跨部門資料人工匯入痛點。</p>
-                        <div class="mt-4 flex flex-wrap gap-2">
-                            <span class="text-[10px] px-2 py-1 bg-gray-100 rounded text-gray-500">SAP B1</span>
-                            <span class="text-[10px] px-2 py-1 bg-gray-100 rounded text-gray-500">DTW</span>
+                        <p class="text-gray-600 text-sm mb-4 leading-relaxed">開發 SAP B1 DTW 自動化工具。利用 C# 背景服務監測資料表，達成拋轉自動化，節省大量手動人力。</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-[10px] px-2 py-1 bg-gray-100 rounded text-gray-500 font-bold uppercase">SAP B1</span>
+                            <span class="text-[10px] px-2 py-1 bg-gray-100 rounded text-gray-500 font-bold uppercase">RPA</span>
                         </div>
+                    </div>
+                    <div class="px-8 py-4 bg-gray-50 border-t border-gray-100 text-xs font-bold text-secondary flex justify-between items-center">
+                        <span>查看實作成效</span>
+                        <i class="fa-solid fa-arrow-right"></i>
                     </div>
                 </div>
 
-                <!-- 專案 4: 畜牧配方 -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-200 hover:shadow-lg transition group cursor-pointer" onclick="openModal('project-feed')">
-                    <div class="p-8">
+                <!-- 專案 4: 畜牧配方 (WPF) -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-200 hover:shadow-lg transition group cursor-pointer flex flex-col" onclick="openModal('project-feed')">
+                    <div class="p-8 flex-grow">
                         <div class="flex justify-between items-start mb-4">
                             <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-lg flex items-center justify-center text-2xl"><i class="fa-solid fa-wheat-awn"></i></div>
-                            <span class="text-xs font-bold text-amber-600 bg-amber-50 px-2 py-1 rounded hover:bg-amber-100 transition">查看詳情</span>
+                            <a href="[https://github.com/NanayaAuko/FeedFormulaForSQLite](https://github.com/NanayaAuko/FeedFormulaForSQLite)" target="_blank" onclick="event.stopPropagation()" class="text-gray-400 hover:text-primary transition text-xl"><i class="fa-brands fa-github"></i></a>
                         </div>
                         <h3 class="text-xl font-bold text-primary mb-2 group-hover:text-secondary transition">畜牧飼料配方管理系統</h3>
-                        <p class="text-gray-600 text-sm line-clamp-2">使用 WPF 與 SQLite 開發的專業配方計算工具。</p>
-                        <div class="mt-4 flex flex-wrap gap-2">
-                            <span class="text-[10px] px-2 py-1 bg-gray-100 rounded text-gray-500">C# WPF</span>
-                            <span class="text-[10px] px-2 py-1 bg-gray-100 rounded text-gray-500">SQLite</span>
-                            <span class="text-[10px] px-2 py-1 bg-gray-100 rounded text-gray-500">XAML</span>
+                        <p class="text-gray-600 text-sm mb-4 leading-relaxed">採用 C# WPF 與 MVVM 模式開發。整合 SQLite 資料庫，實現多原料營養成分即時配比計算與動態損耗分析。</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-[10px] px-2 py-1 bg-gray-100 rounded text-gray-500 font-bold uppercase">C# WPF</span>
+                            <span class="text-[10px] px-2 py-1 bg-gray-100 rounded text-gray-500 font-bold uppercase">SQLite</span>
                         </div>
+                    </div>
+                    <div class="px-8 py-4 bg-gray-50 border-t border-gray-100 text-xs font-bold text-secondary flex justify-between items-center">
+                        <span>查看 UI 截圖</span>
+                        <i class="fa-solid fa-arrow-right"></i>
                     </div>
                 </div>
 
-                <!-- 專案 5: 監控預警 -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-200 hover:shadow-lg transition group cursor-pointer" onclick="openModal('project-monitor')">
-                    <div class="p-8">
+                <!-- 專案 5: 監控預警 (Network Operations Center) -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-200 hover:shadow-lg transition group cursor-pointer flex flex-col" onclick="openModal('project-monitor')">
+                    <div class="p-8 flex-grow">
                         <div class="flex justify-between items-start mb-4">
                             <div class="w-12 h-12 bg-purple-100 text-purple-600 rounded-lg flex items-center justify-center text-2xl"><i class="fa-solid fa-shield-halved"></i></div>
-                            <span class="text-xs font-bold text-purple-600 bg-purple-50 px-2 py-1 rounded hover:bg-purple-100 transition">查看詳情</span>
+                            <a href="[https://github.com/NanayaAuko/Network-Operations-Center.git](https://github.com/NanayaAuko/Network-Operations-Center.git)" target="_blank" onclick="event.stopPropagation()" class="text-gray-400 hover:text-primary transition text-xl"><i class="fa-brands fa-github"></i></a>
                         </div>
-                        <h3 class="text-xl font-bold text-primary mb-2 group-hover:text-secondary transition">主動式監控與預警系統</h3>
-                        <p class="text-gray-600 text-sm line-clamp-2">結合 Python 爬蟲與 AI 解析日誌，化被動維修為主動預防。</p>
-                        <div class="mt-4 flex flex-wrap gap-2">
-                            <span class="text-[10px] px-2 py-1 bg-gray-100 rounded text-gray-500">Python</span>
-                            <span class="text-[10px] px-2 py-1 bg-gray-100 rounded text-gray-500">DevOps</span>
+                        <h3 class="text-xl font-bold text-primary mb-2 group-hover:text-secondary transition">NOC 主動式監控與預警系統</h3>
+                        <p class="text-gray-600 text-sm mb-4 leading-relaxed">維運自動化解決方案。利用 Python 採集伺服器狀態，整合 Scrapy 爬蟲與地端 AI 分析系統異常，實現主動預防。</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-[10px] px-2 py-1 bg-gray-100 rounded text-gray-500 font-bold uppercase">Python</span>
+                            <span class="text-[10px] px-2 py-1 bg-gray-100 rounded text-gray-500 font-bold uppercase">Scrapy</span>
+                            <span class="text-[10px] px-2 py-1 bg-gray-100 rounded text-gray-500 font-bold uppercase">MIS</span>
                         </div>
+                    </div>
+                    <div class="px-8 py-4 bg-gray-50 border-t border-gray-100 text-xs font-bold text-secondary flex justify-between items-center">
+                        <span>查看運維邏輯</span>
+                        <i class="fa-solid fa-arrow-right"></i>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Modal 容器區 (包含代碼片段) -->
+    <!-- Modal 容器區 (包含圖片與代碼片段) -->
     <div id="modal-overlay" class="modal-overlay" style="display: none;" onclick="closeModal()">
         <div class="modal-container" onclick="event.stopPropagation()">
             <button class="absolute top-6 right-6 text-gray-400 hover:text-gray-800" onclick="closeModal()"><i class="fa-solid fa-xmark text-3xl"></i></button>
@@ -379,10 +396,13 @@
             <!-- 專案 1: 理財 AI -->
             <div id="modal-content-project-ai" class="hidden">
                 <h3 class="text-2xl font-bold text-primary mb-2">個人理財與資產預測系統</h3>
-                <p class="text-gray-500 mb-6">Side Project | 全端技術整合</p>
+                <p class="text-gray-500 mb-6">全端技術整合 | Python & .NET 10 & AI</p>
                 <div class="bg-blue-50 p-6 rounded-xl border border-blue-100 mb-6">
-                    <h4 class="font-bold text-primary mb-3">技術實作</h4>
-                    <p class="text-sm text-gray-700 leading-relaxed">利用 Python 爬取 ETF 數據並透過 C# 進行運算，整合在地化 AI 模型提供資產分配摘要。</p>
+                    <h4 class="font-bold text-primary mb-3">技術亮點</h4>
+                    <ul class="text-sm text-gray-700 space-y-2">
+                        <li>● 串接 LM Studio API 於地端運行大語言模型，確保個人財報數據隱私。</li>
+                        <li>● 利用 SQL Stored Procedures 處理高複雜度的加權平均成本與損益試算。</li>
+                    </ul>
                 </div>
                 <h4 class="font-bold mb-3">代碼展示：AI API 串接</h4>
                 <div class="code-block"><span class="code-label">C# / Blazor</span><pre><code>public async Task&lt;string&gt; GetAISynthesis(string data) 
@@ -391,14 +411,19 @@
     var response = await _httpClient.PostAsJsonAsync("v1/completions", request);
     return (await response.Content.ReadFromJsonAsync&lt;AIResponse&gt;()).Choices[0].Text;
 }</code></pre></div>
+                <div class="mt-6 flex justify-center">
+                    <a href="[https://github.com/NanayaAuko/Financial-Situation.git](https://github.com/NanayaAuko/Financial-Situation.git)" target="_blank" class="px-6 py-3 bg-dark text-white rounded-lg font-bold flex items-center gap-2 hover:bg-black transition">
+                        <i class="fa-brands fa-github"></i> 前往 GitHub 儲存庫
+                    </a>
+                </div>
             </div>
 
             <!-- 專案 2: BPM -->
             <div id="modal-content-project-bpm" class="hidden">
                 <h3 class="text-2xl font-bold text-primary mb-2">企業 BPM 與前後端分離架構</h3>
-                <p class="text-gray-500 mb-6">HISS 清展科技 | 系統架構優化</p>
+                <p class="text-gray-500 mb-6">清展科技 | 系統現代化專案</p>
                 <div class="bg-indigo-50 p-6 rounded-xl border border-indigo-100 mb-6">
-                    <p class="text-sm text-gray-700 leading-relaxed">主導從舊有 Web Forms 邏輯拆解，改由 Web API 提供後端服務，極大化前端表單開發的靈活性。</p>
+                    <p class="text-sm text-gray-700 leading-relaxed">主導將舊有 Web Forms 邏輯拆解，改由 Web API 提供後端服務。解決了簽核系統跨平台整合難題，提升開發彈性。</p>
                 </div>
                 <h4 class="font-bold mb-3">代碼展示：Web API 表單提交</h4>
                 <div class="code-block"><span class="code-label">C# Web API</span><pre><code>[HttpPost("Submit")]
@@ -413,105 +438,117 @@ public IActionResult SubmitForm([FromBody] FormModel model)
             <!-- 專案 3: ERP -->
             <div id="modal-content-project-erp" class="hidden">
                 <h3 class="text-2xl font-bold text-primary mb-2">ERP 自動化排程引擎</h3>
-                <p class="text-gray-500 mb-6">HISS 清展科技 | 流程 RPA</p>
+                <p class="text-gray-500 mb-6">清展科技 | 流程自動化引擎</p>
                 <div class="bg-green-50 p-6 rounded-xl border border-green-100 mb-6">
-                    <p class="text-sm text-gray-700 font-bold">● 錯誤率 0% | ● 節省每週 15 小時人工成本</p>
+                    <p class="text-sm text-gray-700 font-bold text-center">每週節省約 15 小時人工匯入時間，數據錯誤率降至 0%</p>
                 </div>
-                <h4 class="font-bold mb-3">核心邏輯</h4>
-                <div class="code-block"><span class="code-label">C# / DTW</span><pre><code>// 執行 SAP DTW 自動拋轉
-var dt = db.Execute("SELECT * FROM PendingImport");
-foreach (DataRow row in dt.Rows) {
-    GenerateCSV(row);
-    RunShell("DTW.exe -silent -params config.xml");
+                <h4 class="font-bold mb-3">核心邏輯片段</h4>
+                <div class="code-block"><span class="code-label">C# / SAP DTW</span><pre><code>// 監聽 SQL Table 並呼叫 SAP DTW 執行匯入
+var pending = db.Query("SELECT * FROM ImportQueue WHERE Status='N'");
+foreach(var item in pending) {
+    ExecuteDTWImport(item.FilePath);
+    db.Execute("UPDATE ImportQueue SET Status='C' WHERE ID=@id", new {id=item.ID});
 }</code></pre></div>
             </div>
 
-            <!-- 專案 4: 畜牧配方 (更新) -->
+            <!-- 專案 4: 畜牧配方 -->
             <div id="modal-content-project-feed" class="hidden">
-                <div class="flex items-center gap-4 mb-2">
-                    <i class="fa-solid fa-wheat-awn text-3xl text-amber-600"></i>
-                    <h3 class="text-2xl font-bold text-primary">畜牧飼料配方管理系統</h3>
-                </div>
-                <p class="text-gray-500 mb-6">Open Source Project | WPF + SQLite</p>
+                <h3 class="text-2xl font-bold text-primary mb-2">畜牧飼料配方管理系統</h3>
+                <p class="text-gray-500 mb-6">開源專案 | C# WPF & MVVM & SQLite</p>
                 
-                <!-- 介面與功能展示區 -->
-                <div class="mb-8">
-                    <h4 class="font-bold text-gray-700 mb-4 flex items-center">
-                        <i class="fa-solid fa-desktop mr-2 text-amber-600"></i> 介面與功能展示
-                    </h4>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div class="bg-gray-100 rounded-xl overflow-hidden border border-gray-200 group">
-                            <div class="aspect-video bg-slate-200 flex items-center justify-center relative">
-                                <img src="原料成分編輯介面.png" alt="原料成分編輯介面" class="w-full h-full object-cover">
-                                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
-                                    <span class="text-white text-xs font-bold px-3 py-1 bg-amber-600 rounded">原料成分編輯介面 (XAML)</span>
-                                </div>
-                            </div>
-                            <div class="p-3 text-xs text-gray-500 bg-white">
-                                <i class="fa-solid fa-info-circle mr-1"></i> 使用 WPF 數據綁定技術，實作原料營養指標編輯
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                    <div class="bg-gray-100 rounded-xl overflow-hidden border border-gray-200 group">
+                        <div class="aspect-video bg-slate-200 flex items-center justify-center relative">
+                            <img src="原料成分編輯介面.png" alt="原料成分編輯介面" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                                <span class="text-white text-xs font-bold px-3 py-1 bg-amber-600 rounded">原料成分編輯介面 (XAML)</span>
                             </div>
                         </div>
-                        <div class="bg-gray-100 rounded-xl overflow-hidden border border-gray-200 group">
-                            <div class="aspect-video bg-slate-200 flex items-center justify-center relative">
-                                <img src="配比試算與損耗分析.png" alt="配比試算與損耗分析" class="w-full h-full object-cover">
-                                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
-                                    <span class="text-white text-xs font-bold px-3 py-1 bg-amber-600 rounded">配比試算與損耗分析</span>
-                                </div>
+                        <div class="p-3 text-xs text-gray-500 bg-white">
+                            <i class="fa-solid fa-info-circle mr-1"></i> 使用 WPF DataGrid 實作營養指標即時編輯
+                        </div>
+                    </div>
+                    <div class="bg-gray-100 rounded-xl overflow-hidden border border-gray-200 group">
+                        <div class="aspect-video bg-slate-200 flex items-center justify-center relative">
+                            <img src="配比試算與損耗分析.png" alt="配比試算與損耗分析" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                                <span class="text-white text-xs font-bold px-3 py-1 bg-amber-600 rounded">配比試算與損耗分析</span>
                             </div>
-                            <div class="p-3 text-xs text-gray-500 bg-white">
-                                <i class="fa-solid fa-info-circle mr-1"></i> 利用 WPF MVVM 模式，實現即時配比試算與損耗分析
-                            </div>
+                        </div>
+                        <div class="p-3 text-xs text-gray-500 bg-white">
+                            <i class="fa-solid fa-calculator mr-1"></i> 利用 MVVM 模式實現數據即時連動計算
                         </div>
                     </div>
                 </div>
 
                 <div class="bg-amber-50 p-6 rounded-xl border border-amber-100 mb-6">
-                    <h4 class="font-bold text-amber-800 mb-2">技術重點</h4>
                     <p class="text-sm text-gray-700 leading-relaxed">
-                        這是一套專為畜牧業設計的現代化配方管理工具。採用 **C# WPF (Windows Presentation Foundation)** 開發，利用其強大的樣式自訂與數據綁定特性，並結合輕量化 **SQLite** 資料庫進行數據持久化。
+                        透過 **WPF 數據綁定** 特性，用戶調整原料比例時系統會即時更新總營養價值，並同步進行損耗預測。
                     </p>
                 </div>
 
-                <h4 class="font-bold mb-3">代碼展示：XAML 數據綁定與 SQLite 調用</h4>
-                <div class="code-block"><span class="code-label">XAML / C#</span><pre><code>&lt;!-- XAML 介面綁定範例 --&gt;
-&lt;DataGrid ItemsSource="{Binding IngredientList}" AutoGenerateColumns="True" /&gt;
-
-// C# 使用 Dapper 調用 SQLite
-public IEnumerable&lt;Ingredient&gt; GetAll() {
+                <h4 class="font-bold mb-3">代碼展示：SQLite 異步查詢</h4>
+                <div class="code-block"><span class="code-label">C# / Dapper</span><pre><code>public async Task&lt;IEnumerable&lt;Ingredient&gt;&gt; GetIngredientsAsync() {
     using (var conn = new SQLiteConnection(ConnectionString)) {
-        return conn.Query&lt;Ingredient&gt;("SELECT * FROM Ingredients");
+        return await conn.QueryAsync&lt;Ingredient&gt;("SELECT * FROM Ingredients");
     }
 }</code></pre></div>
-
-                <div class="mt-8 flex flex-col sm:flex-row gap-4">
-                    <a href="https://github.com/NanayaAuko/FeedFormulaForSQLite" target="_blank" class="flex-1 flex items-center justify-center gap-2 bg-slate-800 text-white px-6 py-3 rounded-lg hover:bg-black transition font-bold shadow-lg">
-                        <i class="fa-brands fa-github text-xl"></i> 訪問 GitHub 儲存庫
+                <div class="mt-8 flex justify-center">
+                    <a href="[https://github.com/NanayaAuko/FeedFormulaForSQLite](https://github.com/NanayaAuko/FeedFormulaForSQLite)" target="_blank" class="px-6 py-3 bg-dark text-white rounded-lg font-bold flex items-center gap-2 hover:bg-black transition">
+                        <i class="fa-brands fa-github"></i> 訪問 GitHub 原始碼
                     </a>
                 </div>
             </div>
 
-            <!-- 專案 5: 監控系統 -->
+            <!-- 專案 5: NOC 監控系統 -->
             <div id="modal-content-project-monitor" class="hidden">
-                <h3 class="text-2xl font-bold text-primary mb-2">主動式監控與預警系統</h3>
-                <p class="text-gray-500 mb-6">HISS 清展科技 | 運維智能化</p>
+                <h3 class="text-2xl font-bold text-primary mb-2">Network Operations Center (NOC)</h3>
+                <p class="text-gray-500 mb-6">維運自動化解決方案 | Python & Scrapy & AI</p>
+                
+                <div class="bg-purple-50 p-6 rounded-xl border border-purple-100 mb-6">
+                    <h4 class="font-bold text-purple-800 mb-3">系統核心優勢</h4>
+                    <p class="text-sm text-gray-700 leading-relaxed mb-4">
+                        針對大規模虛擬化環境 (VMware/OLVM) 進行主動式探測。結合 Scrapy 爬蟲技術，解決了監控數據散落在不同網頁管理介面的痛點，實現統一彙整。
+                    </p>
+                    <ul class="text-sm text-gray-700 space-y-2">
+                        <li>● <strong>Scrapy 採集:</strong> 自動化爬取伺服器狀態儀表板數據。</li>
+                        <li>● <strong>AI 故障分析:</strong> 整合 LM Studio 對異常 Log 進行語意分析與分類。</li>
+                        <li>● <strong>預警推送:</strong> 偵測到異常指標時，即時透過 Webhook 發送警示訊息。</li>
+                    </ul>
+                </div>
+
+                <h4 class="font-bold mb-3">代碼展示：Python 監控核心邏輯</h4>
                 <div class="code-block"><span class="code-label">Python</span><pre><code>import psutil, requests
-# 定時偵測 CPU 負載
-cpu = psutil.cpu_percent(interval=1)
-if cpu > 85:
-    requests.post(WEBHOOK, json={"text": "Alert: High Load!"})</code></pre></div>
+
+# 定時採集核心硬體指標並發送 Webhook 預警
+def monitor_and_alert():
+    cpu_usage = psutil.cpu_percent(interval=1)
+    if cpu_usage > 90:
+        requests.post(WEBHOOK_URL, json={
+            "text": f"⚠️ 警報：伺服器負載過高！目前 CPU：{cpu_usage}%"
+        })
+
+if __name__ == "__main__":
+    monitor_and_alert()</code></pre></div>
+                
+                <div class="mt-6 flex justify-center">
+                    <a href="[https://github.com/NanayaAuko/Network-Operations-Center.git](https://github.com/NanayaAuko/Network-Operations-Center.git)" target="_blank" class="px-6 py-3 bg-dark text-white rounded-lg font-bold flex items-center gap-2 hover:bg-black transition">
+                        <i class="fa-brands fa-github"></i> 前往 GitHub 儲存庫
+                    </a>
+                </div>
             </div>
 
         </div>
     </div>
 
     <!-- 頁尾 -->
-    <footer class="bg-dark text-white py-10">
+    <footer class="bg-dark text-white py-12">
         <div class="max-w-6xl mx-auto px-4 text-center">
             <h2 class="text-2xl font-bold mb-4">陳和仲 HeZhong Chen</h2>
-            <p class="text-gray-500 text-sm mb-6">© 2024 HeZhong Chen. Powered by GitHub Pages.</p>
-            <div class="flex justify-center space-x-6 text-xl">
+            <p class="text-gray-400 text-sm mb-8 leading-relaxed">追求卓越的程式碼質量與極致的系統效能。<br>© 2024 HeZhong Chen. All rights reserved.</p>
+            <div class="flex justify-center space-x-8 text-2xl">
                 <a href="mailto:sfreedom008@gmail.com" class="text-gray-400 hover:text-white transition"><i class="fa-solid fa-envelope"></i></a>
-                <a href="https://github.com/NanayaAuko/hezhong-resume" target="_blank" class="text-gray-400 hover:text-white transition"><i class="fa-brands fa-github"></i></a>
+                <a href="[https://github.com/NanayaAuko/hezhong-resume](https://github.com/NanayaAuko/hezhong-resume)" target="_blank" class="text-gray-400 hover:text-white transition"><i class="fa-brands fa-github"></i></a>
             </div>
         </div>
     </footer>
@@ -521,7 +558,7 @@ if cpu > 85:
             const overlay = document.getElementById('modal-overlay');
             const content = document.getElementById(`modal-content-${projectId}`);
             if (!overlay || !content) return;
-            document.querySelectorAll('[id^=\"modal-content-\"]').forEach(el => el.classList.add('hidden'));
+            document.querySelectorAll('[id^="modal-content-"]').forEach(el => el.classList.add('hidden'));
             content.classList.remove('hidden');
             overlay.style.display = 'flex';
             setTimeout(() => { overlay.classList.add('active'); document.body.classList.add('modal-open'); }, 10);
