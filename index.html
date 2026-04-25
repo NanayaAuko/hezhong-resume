@@ -39,6 +39,7 @@
             border: 2px solid white;
         }
 
+        /* Modal 遮罩層 */
         .modal-overlay {
             position: fixed;
             inset: 0;
@@ -60,7 +61,7 @@
         .modal-container {
             background-color: white;
             width: 100%;
-            max-width: 800px;
+            max-width: 900px;
             max-height: 90vh;
             border-radius: 1.5rem;
             position: relative;
@@ -69,7 +70,6 @@
             transform: translateY(20px);
             transition: transform 0.3s ease;
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-            cursor: default;
         }
 
         .modal-overlay.active .modal-container {
@@ -80,16 +80,29 @@
             overflow: hidden;
         }
 
-        .modal-container::-webkit-scrollbar {
-            width: 8px;
+        /* 代碼區塊樣式 */
+        .code-block {
+            background-color: #1e1e1e;
+            color: #d4d4d4;
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 0.875rem;
+            line-height: 1.5;
+            overflow-x: auto;
+            position: relative;
         }
-        .modal-container::-webkit-scrollbar-track {
-            background: #f1f5f9; 
-            border-radius: 8px;
-        }
-        .modal-container::-webkit-scrollbar-thumb {
-            background: #cbd5e1; 
-            border-radius: 8px;
+        .code-label {
+            position: absolute;
+            top: 0;
+            right: 1.5rem;
+            background: #3b82f6;
+            color: white;
+            padding: 2px 8px;
+            font-size: 0.7rem;
+            border-bottom-left-radius: 4px;
+            border-bottom-right-radius: 4px;
+            text-transform: uppercase;
         }
     </style>
 </head>
@@ -111,6 +124,7 @@
         </div>
     </nav>
 
+    <!-- 英雄區塊 -->
     <section class="pt-32 pb-20 bg-gradient-to-br from-slate-900 to-primary text-white">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center">
             <div class="md:w-2/3 md:pr-10">
@@ -118,7 +132,7 @@
                 <h2 class="text-xl md:text-2xl text-blue-100 mb-6 font-light">軟體設計工程師 | 全端工程師 | 系統分析師</h2>
                 <p class="text-lg text-gray-300 mb-8 leading-relaxed max-w-2xl">
                     具備「全端開發」與「系統維運」雙棲能力的 IT 實戰派。<br>
-                    專精於 C#、ASP.NET 架構與資料庫優化，致力於推動系統自動化與在地化 AI 模型應用，強化企業運作效率。
+                    專精於 C#、ASP.NET 架構與資料庫優化，致力於推動系統自動化與在地化 AI 模型應用。
                 </p>
                 
                 <div class="flex flex-wrap gap-4 text-sm">
@@ -148,125 +162,23 @@
         </div>
     </section>
 
+    <!-- 關於我 -->
     <section id="about" class="py-20 bg-white">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl font-bold text-dark mb-8 border-l-4 border-secondary pl-4">關於我</h2>
             <div class="bg-gray-50 rounded-xl p-8 shadow-sm border border-gray-100 text-gray-700 leading-relaxed text-lg">
-                <p class="mb-4">
-                    擁有國立屏東大學資工碩士學位及逾 6 年的企業級軟體開發與系統維運經驗，我的核心價值在於<strong>「兼具全端開發與底層架構的雙棲實力」</strong>。
-                </p>
-                <p class="mb-4">
-                    近年來，我專注於推動企業數位轉型，不僅深度參與 ERP (SAP B1) 與 BPM 系統的跨部門整合，更率先將地端開源 AI 模型 (LM Studio) 落地於維運場景中。從打造高擴充性的 Web 服務架構，到虛擬化環境建置與主動式監控預警，我致力於提供從開發到維運的全方位解決方案，確保系統 24/7 穩健運行。
-                </p>
-                <p>
-                    我熱衷於攻克複雜的技術痛點，期盼能將過去在醫療資訊 (HIS) 與製造業累積的系統整合底蘊，轉化為貴團隊推動創新與營運升級的驅動力。
-                </p>
+                <p class="mb-4">擁有國立屏東大學資工碩士學位及逾 6 年的經驗，專注於「全端開發與底層架構」。</p>
+                <p>致力於提供從開發到維運的全方位解決方案，確保系統 24/7 穩健運行。</p>
             </div>
         </div>
     </section>
 
-    <section id="skills" class="py-20 bg-gray-50">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-dark mb-10 border-l-4 border-secondary pl-4">專業技能</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-200 hover:shadow-md transition">
-                    <div class="w-12 h-12 bg-blue-100 text-secondary rounded-lg flex items-center justify-center text-2xl mb-4">
-                        <i class="fa-solid fa-code"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3 text-dark">全端開發技術</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-md text-sm font-medium">C# / .NET Core</span>
-                        <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-md text-sm font-medium">MVC / Web API</span>
-                        <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-md text-sm font-medium">Blazor / Web Forms</span>
-                        <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-md text-sm font-medium">JavaScript</span>
-                    </div>
-                </div>
-                <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-200 hover:shadow-md transition">
-                    <div class="w-12 h-12 bg-green-100 text-green-600 rounded-lg flex items-center justify-center text-2xl mb-4">
-                        <i class="fa-solid fa-database"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3 text-dark">資料庫與自動化</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-md text-sm font-medium">MS SQL Server</span>
-                        <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-md text-sm font-medium">Stored Procedures</span>
-                        <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-md text-sm font-medium">SAP B1 DTW 排程</span>
-                        <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-md text-sm font-medium">BPM 流程整合</span>
-                    </div>
-                </div>
-                <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-200 hover:shadow-md transition">
-                    <div class="w-12 h-12 bg-purple-100 text-purple-600 rounded-lg flex items-center justify-center text-2xl mb-4">
-                        <i class="fa-solid fa-microchip"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3 text-dark">AI 整合與維運</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-md text-sm font-medium">LM Studio / API 串接</span>
-                        <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-md text-sm font-medium">Python 網頁爬蟲</span>
-                        <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-md text-sm font-medium">VM 環境管理 (OLVM)</span>
-                        <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-md text-sm font-medium">伺服器監控預警</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="experience" class="py-20 bg-white">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-dark mb-10 border-l-4 border-secondary pl-4">工作經歷</h2>
-            
-            <div class="relative border-l-2 border-gray-200 ml-3 md:ml-0 md:pl-6 space-y-12">
-                <div class="relative pl-8 md:pl-0">
-                    <div class="timeline-dot md:-left-[31px]"></div>
-                    <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 hover:border-blue-200 transition">
-                        <div class="flex flex-col md:flex-row md:items-center justify-between mb-2">
-                            <h3 class="text-xl font-bold text-primary">程式設計師 <span class="text-gray-500 font-normal text-lg">@ HISS 清展科技</span></h3>
-                            <span class="text-sm font-semibold text-secondary bg-blue-50 px-3 py-1 rounded-full w-max mt-2 md:mt-0">2024/03 ~ 仍在職</span>
-                        </div>
-                        <ul class="list-disc pl-5 space-y-2 text-gray-700 mt-4">
-                            <li><strong class="text-dark">BPM 表單開發與前後端分離架構：</strong>負責 BPM (EasyFlow) 電子表單（如 IT01、EC01 等）深度開發。主導系統從傳統 Web Forms 轉型至「前後端分離」架構，利用 C# 撰寫 Web API 作為核心後端，大幅提升前端開發彈性與維護性。</li>
-                            <li><strong class="text-dark">ERP 流程自動化：</strong>獨立開發 SAP B1 DTW 自動排程程式，取代跨部門人工匯入，每週節省約 15 小時的重複性人力，並將登打錯誤率降至 0%。</li>
-                            <li><strong class="text-dark">企業 AI 落地與維運：</strong>成功將 LM Studio 整合至既有 ASP.NET 系統中；並結合 Python 建置伺服器監控預警系統，化被動為主動預防停機風險。</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="relative pl-8 md:pl-0">
-                    <div class="timeline-dot md:-left-[31px]"></div>
-                    <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 hover:border-blue-200 transition">
-                        <div class="flex flex-col md:flex-row md:items-center justify-between mb-2">
-                            <h3 class="text-xl font-bold text-primary">資訊專員 <span class="text-gray-500 font-normal text-lg">@ 衛武營國家藝術文化中心</span></h3>
-                            <span class="text-sm font-semibold text-gray-500 bg-gray-100 px-3 py-1 rounded-full w-max mt-2 md:mt-0">2023/09 ~ 2023/12</span>
-                        </div>
-                        <ul class="list-disc pl-5 space-y-2 text-gray-700 mt-4">
-                            <li><strong class="text-dark">ERP 系統核心維護：</strong>負責內部 ERP 系統核心功能維護，並撰寫內部 API 網頁確保跨系統數據交換之穩定性。</li>
-                            <li><strong class="text-dark">基礎設施營運支援：</strong>協助跨部門資訊需求處理，負責日常 IT 文書、軟硬體排除與網路基礎設施維護。</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="relative pl-8 md:pl-0">
-                    <div class="timeline-dot md:-left-[31px]"></div>
-                    <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 hover:border-blue-200 transition">
-                        <div class="flex flex-col md:flex-row md:items-center justify-between mb-2">
-                            <h3 class="text-xl font-bold text-primary">軟體工程師 <span class="text-gray-500 font-normal text-lg">@ 屏東基督教醫院</span></h3>
-                            <span class="text-sm font-semibold text-gray-500 bg-gray-100 px-3 py-1 rounded-full w-max mt-2 md:mt-0">2019/10 ~ 2023/09</span>
-                        </div>
-                        <ul class="list-disc pl-5 space-y-2 text-gray-700 mt-4">
-                            <li><strong class="text-dark">核心 HIS 醫療系統：</strong>深度參與醫院 HIS 系統開發與維護，確保 24 小時高穩定性運行，支援門診與住院業務。</li>
-                            <li><strong class="text-dark">醫療專案 Web 開發：</strong>獨立開發多項輔助 Web 模組，包含「健檢中心」、「出院服務準備」及「糖尿病個案管理」，有效縮減護理人員紙本作業時間。</li>
-                            <li><strong class="text-dark">基礎資料庫與報表開發：</strong>協助各行政單位進行日常資料撈取與商業報表產出，扎實累積 SQL Server 語法與資料庫處理經驗，為後續複雜系統開發奠定良好基礎。</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ★ 專案與作品集 (擴充為 4 個專案卡片) ★ -->
+    <!-- 專案與作品集 -->
     <section id="projects" class="py-20 bg-gray-50">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl font-bold text-dark mb-10 border-l-4 border-secondary pl-4">專案與作品集</h2>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- 專案一：理財 AI -->
                 <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-200 hover:shadow-lg transition group cursor-pointer" onclick="openModal('project-ai')">
                     <div class="p-8">
@@ -274,226 +186,176 @@
                             <div class="w-12 h-12 bg-blue-100 text-secondary rounded-lg flex items-center justify-center text-2xl">
                                 <i class="fa-solid fa-chart-line"></i>
                             </div>
-                            <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2 py-1 rounded hover:bg-blue-100 transition">查看詳情</span>
+                            <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2 py-1 rounded">查看詳情</span>
                         </div>
                         <h3 class="text-xl font-bold text-primary mb-2 group-hover:text-secondary transition">個人理財與資產預測系統</h3>
-                        <p class="text-gray-600 text-sm line-clamp-2">結合爬蟲、SQL Server 與在地化 LLM (LM Studio) 的全端 Blazor 專案，自動化追蹤 ETF 股市資產。</p>
-                        <div class="mt-4 flex flex-wrap gap-2">
-                            <span class="text-[10px] px-2 py-1 bg-gray-100 rounded text-gray-500">C# Blazor</span>
-                            <span class="text-[10px] px-2 py-1 bg-gray-100 rounded text-gray-500">Python 爬蟲</span>
-                            <span class="text-[10px] px-2 py-1 bg-gray-100 rounded text-gray-500">LM Studio</span>
-                        </div>
+                        <p class="text-gray-600 text-sm">結合爬蟲、SQL Server 與在地化 LLM 的全端 Blazor 專案。</p>
                     </div>
                 </div>
 
-                <!-- 專案二：企業 BPM 與前後端分離架構 (新增) -->
+                <!-- 專案二：BPM -->
                 <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-200 hover:shadow-lg transition group cursor-pointer" onclick="openModal('project-bpm')">
                     <div class="p-8">
                         <div class="flex justify-between items-start mb-4">
                             <div class="w-12 h-12 bg-blue-100 text-secondary rounded-lg flex items-center justify-center text-2xl">
                                 <i class="fa-solid fa-sitemap"></i>
                             </div>
-                            <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2 py-1 rounded hover:bg-blue-100 transition">查看詳情</span>
+                            <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2 py-1 rounded">查看詳情</span>
                         </div>
                         <h3 class="text-xl font-bold text-primary mb-2 group-hover:text-secondary transition">企業 BPM 與前後端分離架構</h3>
-                        <p class="text-gray-600 text-sm line-clamp-2">主導內部 EasyFlow 電子表單系統現代化，從 Web Forms 轉型為 Web API 前後端分離架構，提升開發彈性。</p>
-                        <div class="mt-4 flex flex-wrap gap-2">
-                            <span class="text-[10px] px-2 py-1 bg-gray-100 rounded text-gray-500">C# Web API</span>
-                            <span class="text-[10px] px-2 py-1 bg-gray-100 rounded text-gray-500">BPM 整合</span>
-                            <span class="text-[10px] px-2 py-1 bg-gray-100 rounded text-gray-500">前後端分離</span>
-                        </div>
+                        <p class="text-gray-600 text-sm">從 Web Forms 轉型為 Web API 前後端分離架構。</p>
                     </div>
                 </div>
 
-                <!-- 專案三：SAP B1 自動化引擎 -->
+                <!-- 專案三：ERP -->
                 <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-200 hover:shadow-lg transition group cursor-pointer" onclick="openModal('project-erp')">
                     <div class="p-8">
                         <div class="flex justify-between items-start mb-4">
                             <div class="w-12 h-12 bg-green-100 text-green-600 rounded-lg flex items-center justify-center text-2xl">
                                 <i class="fa-solid fa-network-wired"></i>
                             </div>
-                            <span class="text-xs font-bold text-green-600 bg-green-50 px-2 py-1 rounded hover:bg-green-100 transition">查看詳情</span>
+                            <span class="text-xs font-bold text-green-600 bg-green-50 px-2 py-1 rounded">查看詳情</span>
                         </div>
-                        <h3 class="text-xl font-bold text-primary mb-2 group-hover:text-secondary transition">企業 ERP 自動化排程引擎</h3>
-                        <p class="text-gray-600 text-sm line-clamp-2">為解決內部跨部門資料彙整痛點，獨立開發的 SAP B1 資料拋轉工具，實現零錯誤率的自動化流程。</p>
-                        <div class="mt-4 flex flex-wrap gap-2">
-                            <span class="text-[10px] px-2 py-1 bg-gray-100 rounded text-gray-500">C#</span>
-                            <span class="text-[10px] px-2 py-1 bg-gray-100 rounded text-gray-500">SAP B1 DTW</span>
-                            <span class="text-[10px] px-2 py-1 bg-gray-100 rounded text-gray-500">SQL Server</span>
-                        </div>
+                        <h3 class="text-xl font-bold text-primary mb-2 group-hover:text-secondary transition">ERP 自動化排程引擎</h3>
+                        <p class="text-gray-600 text-sm">獨立開發 SAP B1 DTW 排程工具，取代人工匯入。</p>
                     </div>
                 </div>
 
-                <!-- 專案三：主動式監控預警 -->
+                <!-- 專案四：畜牧配方系統 (新增) -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-200 hover:shadow-lg transition group cursor-pointer" onclick="openModal('project-feed')">
+                    <div class="p-8">
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-lg flex items-center justify-center text-2xl">
+                                <i class="fa-solid fa-wheat-awn"></i>
+                            </div>
+                            <span class="text-xs font-bold text-amber-600 bg-amber-50 px-2 py-1 rounded">查看詳情</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-primary mb-2 group-hover:text-secondary transition">畜牧飼料配方管理系統</h3>
+                        <p class="text-gray-600 text-sm">使用 WinForm 與 SQLite 開發的專業配方計算工具，優化飼料比例。</p>
+                    </div>
+                </div>
+
+                <!-- 專案五：監控系統 -->
                 <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-200 hover:shadow-lg transition group cursor-pointer" onclick="openModal('project-monitor')">
                     <div class="p-8">
                         <div class="flex justify-between items-start mb-4">
                             <div class="w-12 h-12 bg-purple-100 text-purple-600 rounded-lg flex items-center justify-center text-2xl">
                                 <i class="fa-solid fa-shield-halved"></i>
                             </div>
-                            <span class="text-xs font-bold text-purple-600 bg-purple-50 px-2 py-1 rounded hover:bg-purple-100 transition">查看詳情</span>
+                            <span class="text-xs font-bold text-purple-600 bg-purple-50 px-2 py-1 rounded">查看詳情</span>
                         </div>
-                        <h3 class="text-xl font-bold text-primary mb-2 group-hover:text-secondary transition">主動式伺服器監控與預警系統</h3>
-                        <p class="text-gray-600 text-sm line-clamp-2">結合 Python 網頁爬蟲與自動化腳本，即時擷取伺服器狀態，將被動維修化為主動預防。</p>
-                        <div class="mt-4 flex flex-wrap gap-2">
-                            <span class="text-[10px] px-2 py-1 bg-gray-100 rounded text-gray-500">Python Scrapy</span>
-                            <span class="text-[10px] px-2 py-1 bg-gray-100 rounded text-gray-500">VMware/OLVM</span>
-                            <span class="text-[10px] px-2 py-1 bg-gray-100 rounded text-gray-500">系統維運</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 專案四：HIS 醫療網頁模組 -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-200 hover:shadow-lg transition group cursor-pointer" onclick="openModal('project-his')">
-                    <div class="p-8">
-                        <div class="flex justify-between items-start mb-4">
-                            <div class="w-12 h-12 bg-rose-100 text-rose-500 rounded-lg flex items-center justify-center text-2xl">
-                                <i class="fa-solid fa-notes-medical"></i>
-                            </div>
-                            <span class="text-xs font-bold text-rose-500 bg-rose-50 px-2 py-1 rounded hover:bg-rose-100 transition">查看詳情</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-primary mb-2 group-hover:text-secondary transition">智慧醫療 HIS 輔助網頁模組</h3>
-                        <p class="text-gray-600 text-sm line-clamp-2">於屏東基督教醫院期間獨立開發，包含「健檢中心」、「出院準備」等核心醫療輔助系統。</p>
-                        <div class="mt-4 flex flex-wrap gap-2">
-                            <span class="text-[10px] px-2 py-1 bg-gray-100 rounded text-gray-500">ASP.NET</span>
-                            <span class="text-[10px] px-2 py-1 bg-gray-100 rounded text-gray-500">Stored Procedures</span>
-                            <span class="text-[10px] px-2 py-1 bg-gray-100 rounded text-gray-500">UI/UX 優化</span>
-                        </div>
+                        <h3 class="text-xl font-bold text-primary mb-2 group-hover:text-secondary transition">主動式監控與預警系統</h3>
+                        <p class="text-gray-600 text-sm">利用 Python 爬蟲監測伺服器狀態，化被動維修為主動預防。</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ★ 互動視窗容器 (Modal Box) - 包含 4 個專案的詳細內容 ★ -->
+    <!-- Modal 容器 -->
     <div id="modal-overlay" class="modal-overlay" style="display: none;" onclick="closeModal()">
         <div class="modal-container" onclick="event.stopPropagation()">
-            <button class="absolute top-6 right-6 text-gray-400 hover:text-gray-800 transition" onclick="closeModal()">
+            <button class="absolute top-6 right-6 text-gray-400 hover:text-gray-800" onclick="closeModal()">
                 <i class="fa-solid fa-xmark text-3xl"></i>
             </button>
 
-            <!-- 專案一內容 -->
+            <!-- 專案一：理財 AI -->
             <div id="modal-content-project-ai" class="hidden">
-                <div class="flex items-center gap-4 mb-6 pr-8">
-                    <i class="fa-solid fa-chart-line text-3xl text-secondary"></i>
-                    <div>
-                        <h3 class="text-2xl font-bold text-primary">Personal Wealth & Financial AI System</h3>
-                        <p class="text-gray-500 italic">個人理財與資產預測系統 (Side Project)</p>
-                    </div>
-                </div>
-                <div class="space-y-6 text-gray-700">
-                    <p class="leading-relaxed text-lg">結合網頁爬蟲、資料庫與 AI 運算技術，自主開發的個人化資產管理儀表板，具備現代化前後端分離架構。</p>
-                    <div class="bg-blue-50 p-6 rounded-xl border border-blue-100">
-                        <h4 class="font-bold text-primary mb-4 flex items-center text-lg"><i class="fa-solid fa-list-check mr-2"></i> 技術實作細節</h4>
-                        <ul class="space-y-4">
-                            <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-green-500 mt-1"></i><span><strong>爬蟲自動化拋轉：</strong>利用 Python 與 C# 撰寫排程爬蟲，自動擷取台股 ETF (如 0056, 00878) 數據。</span></li>
-                            <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-green-500 mt-1"></i><span><strong>高效能數據運算：</strong>撰寫 Stored Procedures 處理高複雜度的資產配比與歷史損益運算。</span></li>
-                            <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-green-500 mt-1"></i><span><strong>AI 輔助分析：</strong>以 .NET Core Web API 為核心後端，整合 LM Studio API 進行市場數據的 AI 輔助分析與重點摘要。</span></li>
-                            <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-green-500 mt-1"></i><span><strong>現代化前端：</strong>前端逐步導入 Blazor 框架，實現響應式與高互動性的數據視覺化儀表板。</span></li>
-                        </ul>
-                    </div>
+                <h3 class="text-2xl font-bold text-primary mb-2">個人理財與資產預測系統</h3>
+                <p class="text-gray-500 mb-6">Side Project | C# Blazor & Python & AI</p>
+                <div class="code-block mb-6">
+                    <span class="code-label">C# / Blazor</span>
+<pre><code>// 串接在地化 AI 進行財報摘要
+public async Task&lt;string&gt; GetSummary(string json) {
+    var response = await http.PostAsJsonAsync("v1/chat/completions", new { 
+        model = "local-model", 
+        messages = new[] { new { role = "user", content = json } } 
+    });
+    return await response.Content.ReadAsStringAsync();
+}</code></pre>
                 </div>
             </div>
 
-            <!-- 專案二內容：BPM 前後端分離 (新增) -->
+            <!-- 專案二：BPM -->
             <div id="modal-content-project-bpm" class="hidden">
-                <div class="flex items-center gap-4 mb-6 pr-8">
-                    <i class="fa-solid fa-sitemap text-3xl text-secondary"></i>
-                    <div>
-                        <h3 class="text-2xl font-bold text-primary">BPM System & API Architecture</h3>
-                        <p class="text-gray-500 italic">企業 BPM 電子表單與前後端分離架構 (HISS 清展科技)</p>
-                    </div>
-                </div>
-                <div class="space-y-6 text-gray-700">
-                    <p class="leading-relaxed text-lg">為解決傳統網頁架構維護不易的問題，主導企業內部電子表單系統的現代化轉型與 API 開發。</p>
-                    <div class="bg-blue-50 p-6 rounded-xl border border-blue-100">
-                        <h4 class="font-bold text-primary mb-4 flex items-center text-lg"><i class="fa-solid fa-list-check mr-2"></i> 技術實作細節</h4>
-                        <ul class="space-y-4">
-                            <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-green-500 mt-1"></i><span><strong>核心表單開發：</strong>負責 BPM (EasyFlow) 電子表單（如 IT01、EC01 等）深度開發與維護。</span></li>
-                            <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-green-500 mt-1"></i><span><strong>前後端分離架構：</strong>逐步將舊有的 Web Forms 邏輯解耦，改以 C# 撰寫 Web API 作為核心後端提供數據服務。</span></li>
-                            <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-green-500 mt-1"></i><span><strong>提升維護性：</strong>透過 API 導向設計，大幅提升前端開發的彈性，並降低未來系統升級的技術債。</span></li>
-                        </ul>
-                    </div>
+                <h3 class="text-2xl font-bold text-primary mb-2">企業 BPM 與前後端分離架構</h3>
+                <p class="text-gray-500 mb-6">HISS 清展科技 | 系統現代化</p>
+                <div class="code-block mb-6">
+                    <span class="code-label">C# Web API</span>
+<pre><code>[HttpGet("GetFormStatus/{id}")]
+public IActionResult GetStatus(string id) {
+    var status = _repo.QueryStatus(id);
+    return Ok(new { formId = id, currentStatus = status });
+}</code></pre>
                 </div>
             </div>
 
-            <!-- 專案三內容 (原專案二) -->
+            <!-- 專案三：ERP -->
             <div id="modal-content-project-erp" class="hidden">
-                <div class="flex items-center gap-4 mb-6 pr-8">
-                    <i class="fa-solid fa-network-wired text-3xl text-green-600"></i>
-                    <div>
-                        <h3 class="text-2xl font-bold text-primary">Enterprise ERP Automation Engine</h3>
-                        <p class="text-gray-500 italic">企業 ERP 自動化排程引擎 (HISS 清展科技)</p>
-                    </div>
-                </div>
-                <div class="space-y-6 text-gray-700">
-                    <p class="leading-relaxed text-lg">為解決跨部門資料彙整與人工登打易錯的痛點，量身打造的 SAP B1 資料拋轉中介軟體。</p>
-                    <div class="bg-green-50 p-6 rounded-xl border border-green-100">
-                        <h4 class="font-bold text-green-700 mb-4 flex items-center text-lg"><i class="fa-solid fa-list-check mr-2"></i> 技術實作細節</h4>
-                        <ul class="space-y-4">
-                            <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-green-500 mt-1"></i><span><strong>排程自動化：</strong>採用 C# 撰寫背景服務排程，無縫對接企業內部 BPM 電子表單數據。</span></li>
-                            <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-green-500 mt-1"></i><span><strong>DTW 技術整合：</strong>深入解析 SAP B1 Data Transfer Workbench (DTW) 邏輯，實現資料精準寫入。</span></li>
-                            <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-green-500 mt-1"></i><span><strong>商業效益：</strong>成功取代每日手動作業，<strong>每週節省約 15 小時人力，並將人為登打錯誤率降至 0%</strong>。</span></li>
-                        </ul>
-                    </div>
+                <h3 class="text-2xl font-bold text-primary mb-2">ERP 自動化排程引擎</h3>
+                <p class="text-gray-500 mb-6">HISS 清展科技 | 流程自動化</p>
+                <div class="bg-green-50 p-6 rounded-xl border border-green-100 mb-6">
+                    <h4 class="font-bold text-green-700 mb-2">實作成效</h4>
+                    <p class="text-sm">成功將人為登打錯誤率降至 0%，並實現無人值守的 24 小時資料自動拋轉邏輯。</p>
                 </div>
             </div>
 
-            <!-- 專案四內容 (原專案三) -->
+            <!-- 專案四：畜牧配方系統 (詳細內容) -->
+            <div id="modal-content-project-feed" class="hidden">
+                <div class="flex items-center gap-4 mb-4">
+                    <i class="fa-solid fa-wheat-awn text-3xl text-amber-600"></i>
+                    <div>
+                        <h3 class="text-2xl font-bold text-primary">FeedFormulaForSQLite</h3>
+                        <p class="text-gray-500 italic">畜牧飼料配方管理系統 (Open Source)</p>
+                    </div>
+                </div>
+                
+                <div class="bg-amber-50 p-6 rounded-xl border border-amber-100 mb-6">
+                    <h4 class="font-bold text-amber-800 mb-2">專案概述</h4>
+                    <p class="text-sm text-gray-700 leading-relaxed">
+                        這是一套專為畜牧從業者設計的單機版配方管理軟體。透過 **C# WinForm** 建置視覺化介面，並採用輕量化的 **SQLite** 儲存各類原料成分（如粗蛋白、纖維等）與配方歷史紀錄。
+                    </p>
+                </div>
+
+                <h4 class="font-bold mb-3">代碼展示：SQLite 資料庫讀取邏輯</h4>
+                <div class="code-block mb-6">
+                    <span class="code-label">C# / SQLite</span>
+<pre><code>// 讀取原料營養成分資料
+public DataTable GetIngredientData(string name) {
+    using (var conn = new SQLiteConnection("Data Source=FeedDB.db")) {
+        conn.Open();
+        string sql = "SELECT * FROM Ingredients WHERE Name = @name";
+        return conn.Query(sql, new { name = name }).ToDataTable();
+    }
+}</code></pre>
+                </div>
+
+                <div class="flex gap-4">
+                    <a href="https://github.com/NanayaAuko/FeedFormulaForSQLite" target="_blank" class="w-full text-center py-3 bg-amber-600 text-white rounded-lg font-bold hover:bg-amber-700 transition shadow-md">
+                        <i class="fa-brands fa-github mr-2"></i> 查看 GitHub 原始碼
+                    </a>
+                </div>
+            </div>
+
+            <!-- 專案五：監控系統 -->
             <div id="modal-content-project-monitor" class="hidden">
-                <div class="flex items-center gap-4 mb-6 pr-8">
-                    <i class="fa-solid fa-shield-halved text-3xl text-purple-600"></i>
-                    <div>
-                        <h3 class="text-2xl font-bold text-primary">Active Server Monitoring System</h3>
-                        <p class="text-gray-500 italic">主動式伺服器監控與預警系統 (HISS 清展科技)</p>
-                    </div>
-                </div>
-                <div class="space-y-6 text-gray-700">
-                    <p class="leading-relaxed text-lg">跳脫傳統被動報修模式，結合 Python 與 AI 技術，為企業 IT 基礎設施建立的主動防護網。</p>
-                    <div class="bg-purple-50 p-6 rounded-xl border border-purple-100">
-                        <h4 class="font-bold text-purple-700 mb-4 flex items-center text-lg"><i class="fa-solid fa-list-check mr-2"></i> 技術實作細節</h4>
-                        <ul class="space-y-4">
-                            <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-green-500 mt-1"></i><span><strong>Python 爬蟲監測：</strong>開發腳本定時爬取各伺服器狀態頁面與 Log，監控 CPU、記憶體與網路連線狀態。</span></li>
-                            <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-green-500 mt-1"></i><span><strong>LLM 異常解析：</strong>試驗性導入 LM Studio (在地化大語言模型) 自動判讀複雜的系統錯誤日誌並分類。</span></li>
-                            <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-green-500 mt-1"></i><span><strong>預警機制：</strong>當偵測到潛在風險時，透過 API 自動發送通知給維運團隊，大幅降低非預期停機時間。</span></li>
-                        </ul>
-                    </div>
+                <h3 class="text-2xl font-bold text-primary mb-2">主動式監控與預警系統</h3>
+                <p class="text-gray-500 mb-6">HISS 清展科技 | 系統維運</p>
+                <div class="code-block mb-6">
+                    <span class="code-label">Python</span>
+<pre><code>def check_health():
+    cpu = psutil.cpu_percent()
+    if cpu > 85:
+        send_alert(f"CPU usage too high: {cpu}%")</code></pre>
                 </div>
             </div>
 
-            <!-- 專案五內容 (原專案四) -->
-            <div id="modal-content-project-his" class="hidden">
-                <div class="flex items-center gap-4 mb-6 pr-8">
-                    <i class="fa-solid fa-notes-medical text-3xl text-rose-500"></i>
-                    <div>
-                        <h3 class="text-2xl font-bold text-primary">Smart Medical HIS Web Modules</h3>
-                        <p class="text-gray-500 italic">智慧醫療 HIS 輔助網頁模組 (屏東基督教醫院)</p>
-                    </div>
-                </div>
-                <div class="space-y-6 text-gray-700">
-                    <p class="leading-relaxed text-lg">因應現代化醫療需求，於大型 HIS 核心系統外圍擴充之高度客製化 Web 服務。</p>
-                    <div class="bg-rose-50 p-6 rounded-xl border border-rose-100">
-                        <h4 class="font-bold text-rose-700 mb-4 flex items-center text-lg"><i class="fa-solid fa-list-check mr-2"></i> 技術實作細節</h4>
-                        <ul class="space-y-4">
-                            <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-green-500 mt-1"></i><span><strong>醫療專案開發：</strong>獨立完成「健檢中心」、「出院準備服務」及「糖尿病個案管理」等業務流程網頁。</span></li>
-                            <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-green-500 mt-1"></i><span><strong>基礎資料庫處理：</strong>協助各醫療行政單位進行日常資料撈取與商業報表產出，扎實累積 SQL Server 語法與資料庫處理經驗。</span></li>
-                            <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-green-500 mt-1"></i><span><strong>優化行政效率：</strong>與護理端密切合作設計直覺的操作介面，有效縮減第一線醫護人員的紙本與文書作業時間。</span></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            
         </div>
     </div>
 
     <!-- 頁尾 -->
     <footer class="bg-dark text-white py-10">
         <div class="max-w-6xl mx-auto px-4 text-center">
-            <h2 class="text-2xl font-bold mb-4">陳和仲 HeZhong Chen</h2>
-            <div class="flex justify-center space-x-6 mb-6 text-xl">
-                <a href="mailto:sfreedom008@gmail.com" class="text-gray-400 hover:text-white transition"><i class="fa-solid fa-envelope"></i></a>
-                <a href="https://github.com/NanayaAuko/hezhong-resume" target="_blank" class="text-gray-400 hover:text-white transition"><i class="fa-brands fa-github"></i></a>
-            </div>
             <p class="text-gray-500 text-sm">© 2024 HeZhong Chen. Powered by GitHub Pages.</p>
         </div>
     </footer>
@@ -517,18 +379,12 @@
         function closeModal() {
             const overlay = document.getElementById('modal-overlay');
             if (!overlay) return;
-            
             overlay.classList.remove('active');
             document.body.classList.remove('modal-open');
-            
-            setTimeout(() => {
-                overlay.style.display = 'none';
-            }, 300);
+            setTimeout(() => { overlay.style.display = 'none'; }, 300);
         }
 
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') closeModal();
-        });
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
     </script>
 </body>
 </html>
